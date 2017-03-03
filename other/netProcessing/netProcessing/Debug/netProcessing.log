@@ -1,0 +1,17 @@
+﻿  waveEmit.cpp
+c:\users\mariomain\documents\github\samsim\other\netprocessing\netprocessing\src\waveemit.cpp(102): warning C4805: '==': unsafe mix of type 'cl_bool' and type 'bool' in operation
+  simu_overview.cpp
+c:\users\mariomain\documents\github\samsim\other\netprocessing\netprocessing\src\simu_overview.cpp(76): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\mariomain\documents\github\samsim\other\netprocessing\netprocessing\src\simu_overview.cpp(78): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\mariomain\documents\github\samsim\other\netprocessing\netprocessing\src\simu_overview.cpp(435): warning C4996: 'clCreateCommandQueue': was declared deprecated
+  c:\program files (x86)\amd app sdk\3.0\include\cl\cl.h(1359): note: see declaration of 'clCreateCommandQueue'
+  sar_OBJ.cpp
+c:\users\mariomain\documents\github\samsim\other\netprocessing\netprocessing\src\sar_obj.cpp(14): warning C4101: 'pos': unreferenced local variable
+  netProcessing.cpp
+  main.cpp
+  helper.cpp
+  shader.cpp
+  objloader.cpp
+  Generating Code...
+  netProcessing.vcxproj -> C:\Users\mariomain\Documents\gitHub\samSim\other\netProcessing\Debug\netProcessing.exe
+  netProcessing.vcxproj -> C:\Users\mariomain\Documents\gitHub\samSim\other\netProcessing\Debug\netProcessing.pdb (Partial PDB)
