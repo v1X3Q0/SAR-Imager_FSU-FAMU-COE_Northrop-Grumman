@@ -1,0 +1,532 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Reading design: Top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : Top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/mariomain/Downloads/github/SAR-Imager_FSU-FAMU-COE_Northrop-Grumman/VHDL Coding/TotalProject/TotalProject/Top.vhd" into library work
+Parsing entity <Top>.
+Parsing architecture <Behavioral> of entity <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Top> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:89 - "/home/mariomain/Downloads/github/SAR-Imager_FSU-FAMU-COE_Northrop-Grumman/VHDL Coding/TotalProject/TotalProject/Top.vhd" Line 52: <seg7_driver> remains a black-box since it has no binding entity.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Top>.
+    Related source file is "/home/mariomain/Downloads/github/SAR-Imager_FSU-FAMU-COE_Northrop-Grumman/VHDL Coding/TotalProject/TotalProject/Top.vhd".
+    Found 256x16-bit dual-port RAM <Mram_cos> for signal <cos>.
+    Found 256x16-bit dual-port RAM <Mram_sin> for signal <sin>.
+    Found 15-bit register for signal <addrCount>.
+    Found 4-bit register for signal <char3a>.
+    Found 4-bit register for signal <char2a>.
+    Found 4-bit register for signal <char1a>.
+    Found 4-bit register for signal <char0a>.
+    Found 13-bit register for signal <cntr1>.
+    Found 26-bit register for signal <RAM_Adr[25:0]>.
+    Found 8-bit register for signal <adr1>.
+    Found 13-bit adder for signal <cntr1[12]_GND_4_o_add_0_OUT> created at line 1241.
+    Found 15-bit adder for signal <addrCount[14]_GND_4_o_add_4_OUT> created at line 1241.
+    Found 8-bit adder for signal <adr1[7]_GND_4_o_add_19_OUT> created at line 180.
+    Found 8-bit subtractor for signal <GND_4_o_GND_4_o_sub_10_OUT<7:0>> created at line 144.
+    Found 9-bit comparator greater for signal <RAM_Adr[8]_INV_18_o> created at line 141
+    Summary:
+	inferred   2 RAM(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  78 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  12 Multiplexer(s).
+Unit <Top> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 256x16-bit dual-port RAM                              : 2
+# Adders/Subtractors                                   : 4
+ 13-bit adder                                          : 1
+ 15-bit adder                                          : 1
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+# Registers                                            : 8
+ 13-bit register                                       : 1
+ 15-bit register                                       : 1
+ 26-bit register                                       : 1
+ 4-bit register                                        : 4
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 9-bit comparator greater                              : 1
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 2
+ 13-bit 2-to-1 multiplexer                             : 1
+ 26-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <Top>.
+The following registers are absorbed into counter <cntr1>: 1 register on signal <cntr1>.
+The following registers are absorbed into counter <addrCount>: 1 register on signal <addrCount>.
+The following registers are absorbed into counter <adr1>: 1 register on signal <adr1>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_cos> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     clkA           | connected to signal <RAMClk>        | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <RAM_Adr<7:0>>  |          |
+    |     diA            | connected to signal <RAM_data>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     addrB          | connected to signal <adr1>          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_sin> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     clkA           | connected to signal <RAMClk>        | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <GND_4_o_GND_4_o_sub_10_OUT> |          |
+    |     diA            | connected to signal <RAM_data>      |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     addrB          | connected to signal <adr1>          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <Top> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 256x16-bit dual-port distributed RAM                  : 2
+# Adders/Subtractors                                   : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 3
+ 13-bit up counter                                     : 1
+ 15-bit up counter                                     : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 42
+ Flip-Flops                                            : 42
+# Comparators                                          : 1
+ 9-bit comparator greater                              : 1
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 2
+ 26-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <RAM_Adr_15> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_16> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_17> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_18> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_19> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_20> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_21> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_22> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_23> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_24> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RAM_Adr_25> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Top> ...
+WARNING:Xst:1710 - FF/Latch <cntr1_4> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_5> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_6> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_7> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_8> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_9> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_10> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_11> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cntr1_12> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+WARNING:Xst:2036 - Inserting OBUF on port <seg7<6>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <seg7<5>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <seg7<4>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <seg7<3>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <seg7<2>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <seg7<1>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <seg7<0>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <an<3>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <an<2>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <an<1>> driven by black box <seg7_driver>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <an<0>> driven by black box <seg7_driver>. Possible simulation mismatch.
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 2.
+FlipFlop RAM_Adr_2 has been replicated 1 time(s)
+FlipFlop RAM_Adr_3 has been replicated 1 time(s)
+FlipFlop RAM_Adr_4 has been replicated 1 time(s)
+FlipFlop RAM_Adr_5 has been replicated 1 time(s)
+FlipFlop adr1_0 has been replicated 1 time(s)
+FlipFlop adr1_1 has been replicated 1 time(s)
+FlipFlop adr1_2 has been replicated 1 time(s)
+FlipFlop adr1_3 has been replicated 1 time(s)
+FlipFlop adr1_4 has been replicated 1 time(s)
+FlipFlop adr1_5 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 68
+ Flip-Flops                                            : 68
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 171
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 24
+#      LUT2                        : 8
+#      LUT3                        : 9
+#      LUT4                        : 9
+#      LUT5                        : 8
+#      LUT6                        : 55
+#      MUXCY                       : 24
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 27
+# FlipFlops/Latches                : 68
+#      FD                          : 19
+#      FDC                         : 4
+#      FDCE                        : 31
+#      FDE                         : 14
+# RAMS                             : 48
+#      RAM64M                      : 40
+#      RAM64X1D                    : 8
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 74
+#      IBUF                        : 29
+#      OBUF                        : 45
+# Others                           : 1
+#      seg7_driver                 : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              68  out of  18224     0%  
+ Number of Slice LUTs:                  293  out of   9112     3%  
+    Number used as Logic:               117  out of   9112     1%  
+    Number used as Memory:              176  out of   2176     8%  
+       Number used as RAM:              176
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    301
+   Number with an unused Flip Flop:     233  out of    301    77%  
+   Number with an unused LUT:             8  out of    301     2%  
+   Number of fully used LUT-FF pairs:    60  out of    301    19%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          74
+ Number of bonded IOBs:                  74  out of    232    31%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_50                             | IBUF+BUFG              | 116   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.117ns (Maximum Frequency: 242.898MHz)
+   Minimum input arrival time before clock: 5.417ns
+   Maximum output required time after clock: 4.366ns
+   Maximum combinational path delay: 4.372ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_50'
+  Clock period: 4.117ns (frequency: 242.898MHz)
+  Total number of paths / destination ports: 1608 / 467
+-------------------------------------------------------------------------
+Delay:               4.117ns (Levels of Logic = 3)
+  Source:            RAM_Adr_6 (FF)
+  Destination:       Mram_sin1 (RAM)
+  Source Clock:      clk_50 rising
+  Destination Clock: clk_50 rising
+
+  Data Path: RAM_Adr_6 to Mram_sin1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              10   0.447   1.104  RAM_Adr_6 (RAM_Adr_6)
+     LUT4:I0->O            2   0.203   0.981  write_ctrl4_SW0 (N55)
+     LUT6:I0->O            1   0.203   0.000  write_ctrl4_F (N641)
+     MUXF7:I0->O           6   0.131   0.744  write_ctrl4 (write_ctrl4)
+     RAM64M:WE                 0.304          Mram_sin1
+    ----------------------------------------
+    Total                      4.117ns (1.288ns logic, 2.829ns route)
+                                       (31.3% logic, 68.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_50'
+  Total number of paths / destination ports: 486 / 276
+-------------------------------------------------------------------------
+Offset:              5.417ns (Levels of Logic = 4)
+  Source:            pushbuttons<0> (PAD)
+  Destination:       Mram_sin1 (RAM)
+  Destination Clock: clk_50 rising
+
+  Data Path: pushbuttons<0> to Mram_sin1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            62   1.222   1.627  pushbuttons_0_IBUF (pushbuttons_0_IBUF)
+     LUT4:I3->O            2   0.205   0.981  write_ctrl4_SW0 (N55)
+     LUT6:I0->O            1   0.203   0.000  write_ctrl4_F (N641)
+     MUXF7:I0->O           6   0.131   0.744  write_ctrl4 (write_ctrl4)
+     RAM64M:WE                 0.304          Mram_sin1
+    ----------------------------------------
+    Total                      5.417ns (2.065ns logic, 3.352ns route)
+                                       (38.1% logic, 61.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_50'
+  Total number of paths / destination ports: 31 / 31
+-------------------------------------------------------------------------
+Offset:              4.366ns (Levels of Logic = 1)
+  Source:            RAM_Adr_1 (FF)
+  Destination:       RAM_Adr<1> (PAD)
+  Source Clock:      clk_50 rising
+
+  Data Path: RAM_Adr_1 to RAM_Adr<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              36   0.447   1.348  RAM_Adr_1 (RAM_Adr_1)
+     OBUF:I->O                 2.571          RAM_Adr_1_OBUF (RAM_Adr<1>)
+    ----------------------------------------
+    Total                      4.366ns (3.018ns logic, 1.348ns route)
+                                       (69.1% logic, 30.9% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Delay:               4.372ns (Levels of Logic = 2)
+  Source:            clk_50 (PAD)
+  Destination:       RAMClk (PAD)
+
+  Data Path: clk_50 to RAMClk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  clk_50_IBUF (RAMClk_OBUF)
+     OBUF:I->O                 2.571          RAMClk_OBUF (RAMClk)
+    ----------------------------------------
+    Total                      4.372ns (3.793ns logic, 0.579ns route)
+                                       (86.8% logic, 13.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_50
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_50         |    4.117|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.87 secs
+ 
+--> 
+
+
+Total memory usage is 388140 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   32 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

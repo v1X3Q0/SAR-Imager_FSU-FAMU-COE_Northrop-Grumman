@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/mariomain/Downloads/github/SAR-Imager_FSU-FAMU-COE_Northrop-Grumman/VHDL Coding/TotalProject/TotalProject/Top.xst" -ofn "/home/mariomain/Downloads/github/SAR-Imager_FSU-FAMU-COE_Northrop-Grumman/VHDL Coding/TotalProject/TotalProject/Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Top.ngc" Top.ngd  
